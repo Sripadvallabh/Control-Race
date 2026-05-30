@@ -15,7 +15,8 @@ by the build script and left out of Git.
 The committed PDF output lives in `dist/rulebooks/`:
 
 - `control-race-rulebook.pdf` is the current generated rulebook.
-- `control-race-rulebook-v0.1.2.pdf` is the latest themed release.
+- `control-race-rulebook-v0.1.3.pdf` is the latest themed release.
+- `control-race-rulebook-v0.1.2.pdf` fixes the table of contents structure.
 - `control-race-rulebook-v0.1.1.pdf` adds the first themed release.
 - `control-race-rulebook-v0.1.0.pdf` is the initial draft release.
 

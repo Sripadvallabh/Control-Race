@@ -1,31 +1,34 @@
 Changelog
 ---------
 
-0.1.2 - TOC Structure
-~~~~~~~~~~~~~~~~~~~~~
+**0.1.3 - Front Matter and Compact Changelog TOC**
 
-Fixed
-^^^^^
+*Changed*
+
+* Added the rulebook author to the front matter.
+* Removed redundant game and draft-status front matter from the rulebook.
+* Changed changelog version labels from section headings to text so only the
+  top-level changelog appears in the table of contents.
+
+**0.1.2 - TOC Structure**
+
+*Fixed*
 
 * Corrected changelog heading levels so rulebook sections appear as siblings in
   the generated table of contents.
 
-0.1.1 - Theme and Structure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**0.1.1 - Theme and Structure**
 
-Changed
-^^^^^^^
+*Changed*
 
 * Added a stronger PDF theme with cue-sport accents, improved typography,
   cleaner tables, and page footers.
 * Added an explicit front-matter table of contents before the changelog and
   rules.
 
-0.1.0 - Initial Draft
-~~~~~~~~~~~~~~~~~~~~~
+**0.1.0 - Initial Draft**
 
-Added
-^^^^^
+*Added*
 
 * Initial Control Race setup and objective rules.
 * Standard snooker-style scoring values and exact-score win condition.

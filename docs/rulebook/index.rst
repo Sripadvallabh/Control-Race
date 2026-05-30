@@ -3,9 +3,8 @@
 Control Race Rulebook
 =====================
 
-:Game: Control Race
+:Author: Aravindhan Radhakrishnan
 :Version: |rulebook_version|
-:Status: Initial draft
 
 .. contents:: Contents
    :depth: 2
