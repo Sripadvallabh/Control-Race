@@ -543,7 +543,7 @@ q
 1 0 0 1 68.3622 3 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (0.1.5) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (0.1.0) Tj T* ET
 Q
 Q
 q
@@ -878,7 +878,7 @@ q
 1 0 0 1 49.6063 52.44094 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.5 | Page 1) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.0 | Page 1) Tj T* ET
 Q
 Q
  
@@ -886,7 +886,7 @@ endstream
 endobj
 89 0 obj
 <<
-/Length 9330
+/Length 3519
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -907,14 +907,14 @@ q
 1 0 0 1 55.6063 718.937 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.5 - Root Current PDFs) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.0 - Initial Draft) Tj T* ET
 Q
 Q
 q
 1 0 0 1 55.6063 702.937 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Changed) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Added) Tj T* ET
 Q
 Q
 q
@@ -939,7 +939,7 @@ q
 1 0 0 1 15 -3 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Published the current polished and plain PDFs at the repository root for immediate access.) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Initial Control Race setup and objective rules.) Tj T* ET
 Q
 Q
 q
@@ -964,7 +964,8 @@ Q
 q
 1 0 0 1 15 -3 cm
 q
-BT 1 0 0 1 0 2.75 Tm 12 TL /F1 9.25 Tf .113725 .137255 .12549 rg (Kept only versioned PDFs in ) Tj /F4 9.25 Tf (dist/rulebooks/) Tj /F1 9.25 Tf ( as the release archive.) Tj T* ET
+.113725 .137255 .12549 rg
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Standard snooker-style scoring values and exact-score win condition.) Tj T* ET
 Q
 Q
 q
@@ -975,367 +976,7 @@ q
 1 0 0 1 55.6063 668.937 cm
 Q
 q
-1 0 0 1 55.6063 652.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.4 - Dual PDF Variants) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 636.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Added) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 630.937 cm
-Q
-q
-1 0 0 1 55.6063 630.937 cm
-Q
-q
-1 0 0 1 55.6063 618.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Added a plain official-style PDF alongside the polished PDF.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 616.937 cm
-Q
-q
-1 0 0 1 55.6063 592.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 9 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 14.75 Tm /F1 9.25 Tf 12 TL (Updated the build and release script so both variants are generated from the same RST source, version, and) Tj T* (changelog.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 590.937 cm
-Q
-q
-1 0 0 1 55.6063 574.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.3 - Front Matter and Compact Changelog TOC) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 558.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Changed) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 552.937 cm
-Q
-q
-1 0 0 1 55.6063 552.937 cm
-Q
-q
-1 0 0 1 55.6063 540.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Added the rulebook author to the front matter.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 538.937 cm
-Q
-q
-1 0 0 1 55.6063 526.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Removed redundant game and draft-status front matter from the rulebook.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 524.937 cm
-Q
-q
-1 0 0 1 55.6063 500.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 9 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 14.75 Tm /F1 9.25 Tf 12 TL (Changed changelog version labels from section headings to text so only the top-level changelog appears in the) Tj T* (table of contents.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 498.937 cm
-Q
-q
-1 0 0 1 55.6063 482.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.2 - TOC Structure) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 466.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Fixed) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 460.937 cm
-Q
-q
-1 0 0 1 55.6063 460.937 cm
-Q
-q
-1 0 0 1 55.6063 448.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Corrected changelog heading levels so rulebook sections appear as siblings in the generated table of contents.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 446.937 cm
-Q
-q
-1 0 0 1 55.6063 430.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.1 - Theme and Structure) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 414.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Changed) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 408.937 cm
-Q
-q
-1 0 0 1 55.6063 408.937 cm
-Q
-q
-1 0 0 1 55.6063 396.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Added a stronger PDF theme with cue-sport accents, improved typography, cleaner tables, and page footers.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 394.937 cm
-Q
-q
-1 0 0 1 55.6063 382.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Added an explicit front-matter table of contents before the changelog and rules.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 380.937 cm
-Q
-q
-1 0 0 1 55.6063 364.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F2 9.25 Tf 12 TL (0.1.0 - Initial Draft) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 348.937 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F3 9.25 Tf 12 TL (Added) Tj T* ET
-Q
-Q
-q
-1 0 0 1 55.6063 342.937 cm
-Q
-q
-1 0 0 1 55.6063 342.937 cm
-Q
-q
-1 0 0 1 55.6063 330.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Initial Control Race setup and objective rules.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 328.937 cm
-Q
-q
-1 0 0 1 55.6063 316.937 cm
-q
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-q
-1 0 0 1 6 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F4 9.25 Tf 12 TL .45 0 Td (\177) Tj T* -0.45 0 Td ET
-Q
-Q
-q
-1 0 0 1 15 -3 cm
-q
-.113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Standard snooker-style scoring values and exact-score win condition.) Tj T* ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 55.6063 314.937 cm
-Q
-q
-1 0 0 1 55.6063 302.937 cm
+1 0 0 1 55.6063 656.937 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -1358,10 +999,10 @@ Q
 Q
 Q
 q
-1 0 0 1 55.6063 300.937 cm
+1 0 0 1 55.6063 654.937 cm
 Q
 q
-1 0 0 1 55.6063 288.937 cm
+1 0 0 1 55.6063 642.937 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -1384,10 +1025,10 @@ Q
 Q
 Q
 q
-1 0 0 1 55.6063 286.937 cm
+1 0 0 1 55.6063 640.937 cm
 Q
 q
-1 0 0 1 55.6063 274.937 cm
+1 0 0 1 55.6063 628.937 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -1410,10 +1051,10 @@ Q
 Q
 Q
 q
-1 0 0 1 55.6063 272.937 cm
+1 0 0 1 55.6063 626.937 cm
 Q
 q
-1 0 0 1 55.6063 260.937 cm
+1 0 0 1 55.6063 614.937 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -1436,10 +1077,10 @@ Q
 Q
 Q
 q
-1 0 0 1 55.6063 258.937 cm
+1 0 0 1 55.6063 612.937 cm
 Q
 q
-1 0 0 1 55.6063 246.937 cm
+1 0 0 1 55.6063 600.937 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -1462,16 +1103,16 @@ Q
 Q
 Q
 q
-1 0 0 1 55.6063 244.937 cm
+1 0 0 1 55.6063 598.937 cm
 Q
 q
-1 0 0 1 55.6063 244.937 cm
+1 0 0 1 55.6063 598.937 cm
 Q
 q
 1 0 0 1 49.6063 52.44094 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.5 | Page 2) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.0 | Page 2) Tj T* ET
 Q
 Q
  
@@ -1795,7 +1436,7 @@ q
 1 0 0 1 49.6063 52.44094 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.5 | Page 3) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.0 | Page 3) Tj T* ET
 Q
 Q
  
@@ -2103,7 +1744,7 @@ q
 1 0 0 1 49.6063 52.44094 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.5 | Page 4) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.0 | Page 4) Tj T* ET
 Q
 Q
  
@@ -2454,7 +2095,7 @@ q
 1 0 0 1 49.6063 52.44094 cm
 q
 .113725 .137255 .12549 rg
-BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.5 | Page 5) Tj T* ET
+BT 1 0 0 1 0 2.75 Tm /F1 9.25 Tf 12 TL (Control Race Rulebook v0.1.0 | Page 5) Tj T* ET
 Q
 Q
  
@@ -2582,15 +2223,15 @@ xref
 0000026872 00000 n 
 0000026961 00000 n 
 0000034079 00000 n 
-0000043461 00000 n 
-0000049802 00000 n 
-0000056787 00000 n 
-0000063359 00000 n 
-0000063436 00000 n 
-0000063470 00000 n 
-0000063504 00000 n 
-0000063538 00000 n 
-0000063572 00000 n 
+0000037650 00000 n 
+0000043991 00000 n 
+0000050976 00000 n 
+0000057548 00000 n 
+0000057625 00000 n 
+0000057659 00000 n 
+0000057693 00000 n 
+0000057727 00000 n 
+0000057761 00000 n 
 trailer
 <<
 /ID 
@@ -2602,5 +2243,5 @@ trailer
 /Size 99
 >>
 startxref
-63606
+57795
 %%EOF

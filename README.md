@@ -10,8 +10,8 @@ Rulebook and related artifacts for the game of Control Race.
 ## Source
 
 - Rulebook RST files: `docs/rulebook/`
-- Changelog: `CHANGELOG.rst`
-- Version: `VERSION`
+- Changelog: `CHANGELOG.rst` tracks rulebook changes only.
+- Version: `VERSION` tracks rulebook content, not tooling or PDF theme changes.
 - PDF themes: `docs/rulebook/theme.yaml` and `docs/rulebook/theme-plain.yaml`
 - Versioned PDF archive: `dist/rulebooks/`
 
@@ -21,7 +21,8 @@ Rulebook and related artifacts for the game of Control Race.
 tools/rulebook.sh build
 ```
 
-Builds both current root PDFs and versioned PDFs under `dist/rulebooks/`.
+Builds both current root PDFs and matching versioned PDFs under
+`dist/rulebooks/`.
 
 ## Release
 
@@ -30,4 +31,5 @@ tools/rulebook.sh release patch
 ```
 
 Use `minor`, `major`, or an exact version such as `0.2.0` instead of `patch`
-when needed. Update `CHANGELOG.rst` before releasing.
+when the rulebook content changes. Update `CHANGELOG.rst` before releasing a
+rulebook change.
