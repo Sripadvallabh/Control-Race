@@ -11,8 +11,8 @@ VERSION_RST="${SOURCE_DIR}/_version.rst"
 POLISHED_THEME_STYLE="${SOURCE_DIR}/theme.yaml"
 PLAIN_THEME_STYLE="${SOURCE_DIR}/theme-plain.yaml"
 PDF_DIR="${ROOT_DIR}/dist/rulebooks"
-CURRENT_POLISHED_PDF="${PDF_DIR}/control-race-rulebook.pdf"
-CURRENT_PLAIN_PDF="${PDF_DIR}/control-race-rulebook-plain.pdf"
+ROOT_POLISHED_PDF="${ROOT_DIR}/control-race-rulebook.pdf"
+ROOT_PLAIN_PDF="${ROOT_DIR}/control-race-rulebook-plain.pdf"
 BUILD_DIR="${ROOT_DIR}/build/rulebook"
 POLISHED_BACKGROUND_PNG="${BUILD_DIR}/polished-page-background.png"
 PLAIN_BACKGROUND_PNG="${BUILD_DIR}/plain-page-background.png"
@@ -24,7 +24,7 @@ usage() {
     "Usage: tools/rulebook.sh <command> [argument]" \
     "" \
     "Commands:" \
-    "  build                 Generate the polished and plain versioned PDFs." \
+    "  build                 Generate the polished and plain PDFs." \
     "  bump <patch|minor|major|x.y.z>" \
     "                        Update VERSION and rulebook substitution." \
     "  release [patch|minor|major|x.y.z]" \
@@ -222,7 +222,7 @@ build_variant_pdf() {
   local variant="$1"
   local theme_style="$2"
   local generated_style="$3"
-  local current_pdf="$4"
+  local root_pdf="$4"
   local output_pdf
   output_pdf="$(versioned_pdf_path "${variant}")"
 
@@ -231,10 +231,10 @@ build_variant_pdf() {
     --stylesheets="${theme_style},${generated_style}" \
     "${ENTRY_FILE}" \
     -o "${output_pdf}"
-  cp "${output_pdf}" "${current_pdf}"
+  cp "${output_pdf}" "${root_pdf}"
 
   printf 'Generated %s\n' "${output_pdf}"
-  printf 'Updated %s\n' "${current_pdf}"
+  printf 'Updated %s\n' "${root_pdf}"
 }
 
 build_pdf() {
@@ -251,13 +251,13 @@ build_pdf() {
     "polished" \
     "${POLISHED_THEME_STYLE}" \
     "${POLISHED_GENERATED_STYLE}" \
-    "${CURRENT_POLISHED_PDF}"
+    "${ROOT_POLISHED_PDF}"
 
   build_variant_pdf \
     "plain" \
     "${PLAIN_THEME_STYLE}" \
     "${PLAIN_GENERATED_STYLE}" \
-    "${CURRENT_PLAIN_PDF}"
+    "${ROOT_PLAIN_PDF}"
 }
 
 release_rulebook() {
@@ -274,6 +274,8 @@ release_rulebook() {
     "CHANGELOG.rst" \
     "README.md" \
     "VERSION" \
+    "control-race-rulebook.pdf" \
+    "control-race-rulebook-plain.pdf" \
     "requirements-rulebook.txt" \
     "docs/rulebook" \
     "tools/rulebook.sh" \

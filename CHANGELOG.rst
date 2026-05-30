@@ -1,6 +1,14 @@
 Changelog
 ---------
 
+**0.1.5 - Root Current PDFs**
+
+*Changed*
+
+* Published the current polished and plain PDFs at the repository root for
+  immediate access.
+* Kept only versioned PDFs in ``dist/rulebooks/`` as the release archive.
+
 **0.1.4 - Dual PDF Variants**
 
 *Added*

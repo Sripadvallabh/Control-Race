@@ -2,54 +2,32 @@
 
 Rulebook and related artifacts for the game of Control Race.
 
-## Rulebook
+## Latest PDFs
 
-The rulebook source lives in `docs/rulebook/` as reStructuredText files.
+- `control-race-rulebook.pdf` - current polished rulebook.
+- `control-race-rulebook-plain.pdf` - current plain rulebook.
 
-Changes are tracked in `CHANGELOG.rst` and included near the front of the
-generated PDF.
+## Source
 
-The polished PDF theme lives in `docs/rulebook/theme.yaml`; the plain PDF theme
-lives in `docs/rulebook/theme-plain.yaml`. Generated page art is created by the
-build script and left out of Git.
-
-The committed PDF output lives in `dist/rulebooks/`:
-
-- `control-race-rulebook.pdf` is the current polished rulebook.
-- `control-race-rulebook-plain.pdf` is the current plain rulebook.
-- `control-race-rulebook-v0.1.4.pdf` is the latest polished release.
-- `control-race-rulebook-plain-v0.1.4.pdf` is the latest plain release.
-- `control-race-rulebook-v0.1.3.pdf` adds compact changelog TOC behavior.
-- `control-race-rulebook-v0.1.2.pdf` fixes the table of contents structure.
-- `control-race-rulebook-v0.1.1.pdf` adds the first themed release.
-- `control-race-rulebook-v0.1.0.pdf` is the initial draft release.
+- Rulebook RST files: `docs/rulebook/`
+- Changelog: `CHANGELOG.rst`
+- Version: `VERSION`
+- PDF themes: `docs/rulebook/theme.yaml` and `docs/rulebook/theme-plain.yaml`
+- Versioned PDF archive: `dist/rulebooks/`
 
 ## Build
-
-Generate both PDFs locally:
 
 ```sh
 tools/rulebook.sh build
 ```
 
-The script creates a local `.venv-rulebook/`, installs the pinned renderer from
-`requirements-rulebook.txt`, and writes the PDF to `dist/rulebooks/`.
+Builds both current root PDFs and versioned PDFs under `dist/rulebooks/`.
 
 ## Release
-
-Create a versioned rulebook release and commit the source plus PDF:
 
 ```sh
 tools/rulebook.sh release patch
 ```
 
-You can also set an exact version:
-
-```sh
-tools/rulebook.sh release 0.2.0
-```
-
-The release command updates `VERSION`, regenerates `docs/rulebook/_version.rst`,
-builds the PDF, stages the rulebook files and generated PDFs, then creates a
-Git commit. Update `CHANGELOG.rst` before running a release so readers can
-review only what changed.
+Use `minor`, `major`, or an exact version such as `0.2.0` instead of `patch`
+when needed. Update `CHANGELOG.rst` before releasing.
