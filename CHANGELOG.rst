@@ -1,11 +1,20 @@
 Changelog
-=========
+---------
+
+0.1.2 - TOC Structure
+~~~~~~~~~~~~~~~~~~~~~
+
+Fixed
+^^^^^
+
+* Corrected changelog heading levels so rulebook sections appear as siblings in
+  the generated table of contents.
 
 0.1.1 - Theme and Structure
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Changed
-~~~~~~~
+^^^^^^^
 
 * Added a stronger PDF theme with cue-sport accents, improved typography,
   cleaner tables, and page footers.
@@ -13,10 +22,10 @@ Changed
   rules.
 
 0.1.0 - Initial Draft
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Added
-~~~~~
+^^^^^
 
 * Initial Control Race setup and objective rules.
 * Standard snooker-style scoring values and exact-score win condition.

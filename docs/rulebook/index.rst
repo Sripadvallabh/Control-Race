@@ -9,6 +9,7 @@ Control Race Rulebook
 
 .. contents:: Contents
    :depth: 2
+   :local:
 
 .. raw:: pdf
 
