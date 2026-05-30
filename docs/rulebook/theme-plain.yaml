@@ -1,0 +1,190 @@
+linkColor: "#000000"
+
+pageSetup:
+  size: A4
+  margin-top: 2cm
+  margin-bottom: 1.8cm
+  margin-left: 2cm
+  margin-right: 2cm
+  spacing-footer: 5mm
+  spacing-header: 5mm
+
+styles:
+  base:
+    fontName: fontSerif
+    fontSize: 10
+    leading: 12
+    textColor: "#000000"
+
+  bodytext:
+    alignment: TA_LEFT
+    hyphenation: false
+    parent: normal
+    spaceAfter: 2
+    spaceBefore: 4
+
+  title:
+    alignment: TA_LEFT
+    fontName: fontSerifBold
+    fontSize: 18
+    keepWithNext: false
+    leading: 22
+    parent: heading
+    spaceAfter: 12
+    spaceBefore: 6
+    textColor: "#000000"
+
+  heading:
+    fontName: fontSerifBold
+    keepWithNext: true
+    parent: normal
+    spaceAfter: 6
+    spaceBefore: 12
+    textColor: "#000000"
+
+  heading1:
+    fontSize: 14
+    leading: 17
+    parent: heading
+    spaceBefore: 16
+
+  heading2:
+    fontSize: 12
+    leading: 15
+    parent: heading
+
+  heading3:
+    fontSize: 10.5
+    leading: 13
+    parent: heading
+
+  field-list:
+    colWidths:
+    - 2.4cm
+    - null
+    commands:
+    - - VALIGN
+      - - 0
+        - 0
+      - - -1
+        - -1
+      - TOP
+    - - TOPPADDING
+      - - 0
+        - 0
+      - - -1
+        - -1
+      - 1
+    parent: bodytext
+    spaceAfter: 10
+    spaceBefore: 4
+
+  fieldname:
+    alignment: TA_LEFT
+    fontName: fontSerifBold
+    parent: bodytext
+    textColor: "#000000"
+
+  fieldvalue:
+    parent: bodytext
+
+  topic-title:
+    fontName: fontSerifBold
+    fontSize: 14
+    leading: 17
+    parent: heading
+    spaceAfter: 8
+    textColor: "#000000"
+
+  contents:
+    parent: normal
+    spaceAfter: 10
+    spaceBefore: 4
+
+  toc:
+    fontSize: 10
+    leading: 12
+    parent: normal
+    textColor: "#000000"
+
+  toc1:
+    fontName: fontSerifBold
+    parent: toc
+    spaceBefore: 2
+
+  toc2:
+    leftIndent: 18
+    parent: toc
+
+  bullet-list:
+    colWidths:
+    - 12
+    - null
+    commands:
+    - - VALIGN
+      - - 0
+        - 0
+      - - -1
+        - -1
+      - TOP
+    - - RIGHTPADDING
+      - - 0
+        - 0
+      - - 1
+        - -1
+      - 0
+    parent: bodytext
+    spaceBefore: 4
+
+  bullet-list-item:
+    parent: bodytext
+
+  table:
+    alignment: TA_CENTER
+    commands:
+    - - VALIGN
+      - - 0
+        - 0
+      - - -1
+        - -1
+      - TOP
+    - - INNERGRID
+      - - 0
+        - 0
+      - - -1
+        - -1
+      - 0.25
+      - "#666666"
+    - - LINEBELOW
+      - - 0
+        - 0
+      - - -1
+        - 0
+      - 0.75
+      - "#000000"
+    - - BOX
+      - - 0
+        - 0
+      - - -1
+        - -1
+      - 0.5
+      - "#000000"
+    parent: normal
+    spaceAfter: 8
+    spaceBefore: 8
+
+  table-body:
+    parent: normal
+
+  table-heading:
+    alignment: TA_CENTER
+    fontName: fontSerifBold
+    parent: normal
+    textColor: "#000000"
+
+  footer:
+    alignment: TA_CENTER
+    fontSize: 8
+    parent: normal
+    textColor: "#000000"
+

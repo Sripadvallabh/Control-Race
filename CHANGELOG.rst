@@ -1,6 +1,14 @@
 Changelog
 ---------
 
+**0.1.4 - Dual PDF Variants**
+
+*Added*
+
+* Added a plain official-style PDF alongside the polished PDF.
+* Updated the build and release script so both variants are generated from the
+  same RST source, version, and changelog.
+
 **0.1.3 - Front Matter and Compact Changelog TOC**
 
 *Changed*

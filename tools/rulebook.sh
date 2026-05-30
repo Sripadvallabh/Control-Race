@@ -8,19 +8,23 @@ VERSION_FILE="${ROOT_DIR}/VERSION"
 SOURCE_DIR="${ROOT_DIR}/docs/rulebook"
 ENTRY_FILE="${SOURCE_DIR}/index.rst"
 VERSION_RST="${SOURCE_DIR}/_version.rst"
-THEME_STYLE="${SOURCE_DIR}/theme.yaml"
+POLISHED_THEME_STYLE="${SOURCE_DIR}/theme.yaml"
+PLAIN_THEME_STYLE="${SOURCE_DIR}/theme-plain.yaml"
 PDF_DIR="${ROOT_DIR}/dist/rulebooks"
-CURRENT_PDF="${PDF_DIR}/control-race-rulebook.pdf"
+CURRENT_POLISHED_PDF="${PDF_DIR}/control-race-rulebook.pdf"
+CURRENT_PLAIN_PDF="${PDF_DIR}/control-race-rulebook-plain.pdf"
 BUILD_DIR="${ROOT_DIR}/build/rulebook"
-BACKGROUND_PNG="${BUILD_DIR}/page-background.png"
-GENERATED_STYLE="${BUILD_DIR}/rulebook-style.yaml"
+POLISHED_BACKGROUND_PNG="${BUILD_DIR}/polished-page-background.png"
+PLAIN_BACKGROUND_PNG="${BUILD_DIR}/plain-page-background.png"
+POLISHED_GENERATED_STYLE="${BUILD_DIR}/rulebook-polished.generated.yaml"
+PLAIN_GENERATED_STYLE="${BUILD_DIR}/rulebook-plain.generated.yaml"
 
 usage() {
   printf '%s\n' \
     "Usage: tools/rulebook.sh <command> [argument]" \
     "" \
     "Commands:" \
-    "  build                 Generate the versioned PDF." \
+    "  build                 Generate the polished and plain versioned PDFs." \
     "  bump <patch|minor|major|x.y.z>" \
     "                        Update VERSION and rulebook substitution." \
     "  release [patch|minor|major|x.y.z]" \
@@ -112,11 +116,11 @@ ensure_tools() {
 ensure_page_assets() {
   mkdir -p "${BUILD_DIR}"
 
-  BACKGROUND_PNG="${BACKGROUND_PNG}" "${VENV_DIR}/bin/python" - <<'PY'
+  POLISHED_BACKGROUND_PNG="${POLISHED_BACKGROUND_PNG}" \
+  PLAIN_BACKGROUND_PNG="${PLAIN_BACKGROUND_PNG}" \
+    "${VENV_DIR}/bin/python" - <<'PY'
 import os
 from PIL import Image, ImageDraw
-
-path = os.environ["BACKGROUND_PNG"]
 
 width, height = 1240, 1754
 image = Image.new("RGB", (width, height), "#fbfaf6")
@@ -154,7 +158,9 @@ for index, color in enumerate(ball_colors):
 draw.rectangle((0, 132, 12, height - 74), fill="#d8c26b")
 draw.rectangle((12, 132, 18, height - 74), fill="#123d2b")
 
-image.save(path)
+image.save(os.environ["POLISHED_BACKGROUND_PNG"])
+
+Image.new("RGB", (16, 16), "#ffffff").save(os.environ["PLAIN_BACKGROUND_PNG"])
 PY
 
   local version
@@ -163,22 +169,72 @@ PY
   {
     printf '%s\n' 'pageTemplates:'
     printf '%s\n' '  mainPage:'
-    printf '    background: "%s"\n' "${BACKGROUND_PNG}"
+    printf '    background: "%s"\n' "${POLISHED_BACKGROUND_PNG}"
     printf '%s\n' '    background_fit_mode: scale'
     printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
     printf '%s\n' '    showFooter: true'
     printf '%s\n' '    showHeader: false'
     printf '%s\n' '  decoratedPage:'
-    printf '    background: "%s"\n' "${BACKGROUND_PNG}"
+    printf '    background: "%s"\n' "${POLISHED_BACKGROUND_PNG}"
     printf '%s\n' '    background_fit_mode: scale'
     printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
     printf '%s\n' '    showFooter: true'
     printf '%s\n' '    showHeader: false'
-  } > "${GENERATED_STYLE}"
+  } > "${POLISHED_GENERATED_STYLE}"
+
+  {
+    printf '%s\n' 'pageTemplates:'
+    printf '%s\n' '  mainPage:'
+    printf '    background: "%s"\n' "${PLAIN_BACKGROUND_PNG}"
+    printf '%s\n' '    background_fit_mode: scale'
+    printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
+    printf '%s\n' '    showFooter: true'
+    printf '%s\n' '    showHeader: false'
+    printf '%s\n' '  decoratedPage:'
+    printf '    background: "%s"\n' "${PLAIN_BACKGROUND_PNG}"
+    printf '%s\n' '    background_fit_mode: scale'
+    printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
+    printf '%s\n' '    showFooter: true'
+    printf '%s\n' '    showHeader: false'
+  } > "${PLAIN_GENERATED_STYLE}"
 }
 
 versioned_pdf_path() {
-  printf '%s/control-race-rulebook-v%s.pdf\n' "${PDF_DIR}" "$(rulebook_version)"
+  local variant="$1"
+  local version
+  version="$(rulebook_version)"
+
+  case "${variant}" in
+    polished)
+      printf '%s/control-race-rulebook-v%s.pdf\n' "${PDF_DIR}" "${version}"
+      ;;
+    plain)
+      printf '%s/control-race-rulebook-plain-v%s.pdf\n' "${PDF_DIR}" "${version}"
+      ;;
+    *)
+      printf 'Unknown rulebook variant: %s\n' "${variant}" >&2
+      exit 1
+      ;;
+  esac
+}
+
+build_variant_pdf() {
+  local variant="$1"
+  local theme_style="$2"
+  local generated_style="$3"
+  local current_pdf="$4"
+  local output_pdf
+  output_pdf="$(versioned_pdf_path "${variant}")"
+
+  "${VENV_DIR}/bin/rst2pdf" \
+    --date-invariant \
+    --stylesheets="${theme_style},${generated_style}" \
+    "${ENTRY_FILE}" \
+    -o "${output_pdf}"
+  cp "${output_pdf}" "${current_pdf}"
+
+  printf 'Generated %s\n' "${output_pdf}"
+  printf 'Updated %s\n' "${current_pdf}"
 }
 
 build_pdf() {
@@ -191,18 +247,17 @@ build_pdf() {
 
   mkdir -p "${PDF_DIR}"
 
-  local output_pdf
-  output_pdf="$(versioned_pdf_path)"
+  build_variant_pdf \
+    "polished" \
+    "${POLISHED_THEME_STYLE}" \
+    "${POLISHED_GENERATED_STYLE}" \
+    "${CURRENT_POLISHED_PDF}"
 
-  "${VENV_DIR}/bin/rst2pdf" \
-    --date-invariant \
-    --stylesheets="${THEME_STYLE},${GENERATED_STYLE}" \
-    "${ENTRY_FILE}" \
-    -o "${output_pdf}"
-  cp "${output_pdf}" "${CURRENT_PDF}"
-
-  printf 'Generated %s\n' "${output_pdf}"
-  printf 'Updated %s\n' "${CURRENT_PDF}"
+  build_variant_pdf \
+    "plain" \
+    "${PLAIN_THEME_STYLE}" \
+    "${PLAIN_GENERATED_STYLE}" \
+    "${CURRENT_PLAIN_PDF}"
 }
 
 release_rulebook() {

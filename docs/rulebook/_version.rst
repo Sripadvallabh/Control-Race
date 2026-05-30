@@ -1,2 +1,2 @@
 .. This file is maintained by tools/rulebook.sh.
-.. |rulebook_version| replace:: 0.1.3
+.. |rulebook_version| replace:: 0.1.4

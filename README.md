@@ -9,20 +9,24 @@ The rulebook source lives in `docs/rulebook/` as reStructuredText files.
 Changes are tracked in `CHANGELOG.rst` and included near the front of the
 generated PDF.
 
-The PDF theme lives in `docs/rulebook/theme.yaml`; generated page art is created
-by the build script and left out of Git.
+The polished PDF theme lives in `docs/rulebook/theme.yaml`; the plain PDF theme
+lives in `docs/rulebook/theme-plain.yaml`. Generated page art is created by the
+build script and left out of Git.
 
 The committed PDF output lives in `dist/rulebooks/`:
 
-- `control-race-rulebook.pdf` is the current generated rulebook.
-- `control-race-rulebook-v0.1.3.pdf` is the latest themed release.
+- `control-race-rulebook.pdf` is the current polished rulebook.
+- `control-race-rulebook-plain.pdf` is the current plain rulebook.
+- `control-race-rulebook-v0.1.4.pdf` is the latest polished release.
+- `control-race-rulebook-plain-v0.1.4.pdf` is the latest plain release.
+- `control-race-rulebook-v0.1.3.pdf` adds compact changelog TOC behavior.
 - `control-race-rulebook-v0.1.2.pdf` fixes the table of contents structure.
 - `control-race-rulebook-v0.1.1.pdf` adds the first themed release.
 - `control-race-rulebook-v0.1.0.pdf` is the initial draft release.
 
 ## Build
 
-Generate the PDF locally:
+Generate both PDFs locally:
 
 ```sh
 tools/rulebook.sh build
