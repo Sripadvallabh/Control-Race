@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.1.1 - Theme and Structure
+---------------------------
+
+Changed
+~~~~~~~
+
+* Added a stronger PDF theme with cue-sport accents, improved typography,
+  cleaner tables, and page footers.
+* Added an explicit front-matter table of contents before the changelog and
+  rules.
+
 0.1.0 - Initial Draft
 ---------------------
 
@@ -17,4 +28,3 @@ Added
 * Shorter and longer duration variants.
 * Bookkeeping responsibilities for scores, marks, spotting, corrections, and
   table-state checks.
-

@@ -7,11 +7,18 @@ Control Race Rulebook
 :Version: |rulebook_version|
 :Status: Initial draft
 
-.. contents:: Table of Contents
+.. contents:: Contents
    :depth: 2
-   :local:
+
+.. raw:: pdf
+
+   PageBreak
 
 .. include:: ../../CHANGELOG.rst
+
+.. raw:: pdf
+
+   PageBreak
 
 .. include:: setup-and-objective.rst
 

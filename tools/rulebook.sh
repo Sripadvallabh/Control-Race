@@ -8,6 +8,7 @@ VERSION_FILE="${ROOT_DIR}/VERSION"
 SOURCE_DIR="${ROOT_DIR}/docs/rulebook"
 ENTRY_FILE="${SOURCE_DIR}/index.rst"
 VERSION_RST="${SOURCE_DIR}/_version.rst"
+THEME_STYLE="${SOURCE_DIR}/theme.yaml"
 PDF_DIR="${ROOT_DIR}/dist/rulebooks"
 CURRENT_PDF="${PDF_DIR}/control-race-rulebook.pdf"
 BUILD_DIR="${ROOT_DIR}/build/rulebook"
@@ -113,20 +114,66 @@ ensure_page_assets() {
 
   BACKGROUND_PNG="${BACKGROUND_PNG}" "${VENV_DIR}/bin/python" - <<'PY'
 import os
-from PIL import Image
+from PIL import Image, ImageDraw
 
 path = os.environ["BACKGROUND_PNG"]
-Image.new("RGB", (16, 16), (255, 255, 255)).save(path)
+
+width, height = 1240, 1754
+image = Image.new("RGB", (width, height), "#fbfaf6")
+draw = ImageDraw.Draw(image)
+
+felt = "#123d2b"
+gold = "#c8a64b"
+ink = "#1d2320"
+red = "#b63232"
+yellow = "#e3bd35"
+green = "#2f8f46"
+brown = "#855525"
+blue = "#2d5fa8"
+pink = "#cf6b96"
+black = "#171717"
+
+draw.rectangle((0, 0, width, 116), fill=felt)
+draw.rectangle((0, 116, width, 132), fill=gold)
+draw.rectangle((0, height - 74, width, height), fill="#f1eee6")
+draw.line((0, height - 74, width, height - 74), fill="#d6caa9", width=2)
+
+ball_y = 58
+ball_radius = 18
+ball_colors = [yellow, green, brown, blue, pink, black, red]
+start_x = width - 360
+for index, color in enumerate(ball_colors):
+  x = start_x + index * 46
+  draw.ellipse(
+      (x, ball_y - ball_radius, x + ball_radius * 2, ball_y + ball_radius),
+      fill=color,
+      outline="#f7f4ea" if color == black else ink,
+      width=2,
+  )
+
+draw.rectangle((0, 132, 12, height - 74), fill="#d8c26b")
+draw.rectangle((12, 132, 18, height - 74), fill="#123d2b")
+
+image.save(path)
 PY
+
+  local version
+  version="$(rulebook_version)"
 
   {
     printf '%s\n' 'pageTemplates:'
     printf '%s\n' '  mainPage:'
     printf '    background: "%s"\n' "${BACKGROUND_PNG}"
     printf '%s\n' '    background_fit_mode: scale'
+    printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
+    printf '%s\n' '    showFooter: true'
+    printf '%s\n' '    showHeader: false'
     printf '%s\n' '  decoratedPage:'
     printf '    background: "%s"\n' "${BACKGROUND_PNG}"
     printf '%s\n' '    background_fit_mode: scale'
+    printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
+    printf '%s\n' '    showFooter: true'
+    printf '%s\n' '    showHeader: false'
   } > "${GENERATED_STYLE}"
 }
 
@@ -149,7 +196,7 @@ build_pdf() {
 
   "${VENV_DIR}/bin/rst2pdf" \
     --date-invariant \
-    --stylesheets="${GENERATED_STYLE}" \
+    --stylesheets="${THEME_STYLE},${GENERATED_STYLE}" \
     "${ENTRY_FILE}" \
     -o "${output_pdf}"
   cp "${output_pdf}" "${CURRENT_PDF}"
