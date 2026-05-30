@@ -7,6 +7,8 @@ Rulebook and related artifacts for the game of Control Race.
 - `control-race-rulebook.pdf` - current polished rulebook.
 - `control-race-rulebook-plain.pdf` - current plain rulebook.
 
+Older versioned rulebooks are available in `dist/rulebooks/`.
+
 ## Source
 
 - Rulebook RST files: `docs/rulebook/`
