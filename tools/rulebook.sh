@@ -14,6 +14,7 @@ PDF_DIR="${ROOT_DIR}/dist/rulebooks"
 ROOT_POLISHED_PDF="${ROOT_DIR}/control-race-rulebook.pdf"
 ROOT_PLAIN_PDF="${ROOT_DIR}/control-race-rulebook-plain.pdf"
 BUILD_DIR="${ROOT_DIR}/build/rulebook"
+PLAIN_ENTRY_FILE="${BUILD_DIR}/index-plain.rst"
 POLISHED_BACKGROUND_PNG="${BUILD_DIR}/polished-page-background.png"
 PLAIN_BACKGROUND_PNG="${BUILD_DIR}/plain-page-background.png"
 POLISHED_GENERATED_STYLE="${BUILD_DIR}/rulebook-polished.generated.yaml"
@@ -187,16 +188,60 @@ PY
     printf '%s\n' '  mainPage:'
     printf '    background: "%s"\n' "${PLAIN_BACKGROUND_PNG}"
     printf '%s\n' '    background_fit_mode: scale'
-    printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
     printf '%s\n' '    showFooter: true'
-    printf '%s\n' '    showHeader: false'
+    printf '%s\n' '    showHeader: true'
     printf '%s\n' '  decoratedPage:'
     printf '    background: "%s"\n' "${PLAIN_BACKGROUND_PNG}"
     printf '%s\n' '    background_fit_mode: scale'
-    printf '    defaultFooter: "Control Race Rulebook v%s | Page ###Page###"\n' "${version}"
     printf '%s\n' '    showFooter: true'
-    printf '%s\n' '    showHeader: false'
+    printf '%s\n' '    showHeader: true'
   } > "${PLAIN_GENERATED_STYLE}"
+}
+
+ensure_plain_entry() {
+  mkdir -p "${BUILD_DIR}"
+
+  {
+    printf '%s\n' '.. include:: ../../docs/rulebook/_version.rst'
+    printf '%s\n' ''
+    printf '%s\n' 'Control Race Rulebook'
+    printf '%s\n' '====================='
+    printf '%s\n' ''
+    printf '%s\n' ':Author: Aravindhan Radhakrishnan'
+    printf '%s\n' ':Version: |rulebook_version|'
+    printf '%s\n' ''
+    printf '%s\n' '.. contents:: Contents'
+    printf '%s\n' '   :depth: 2'
+    printf '%s\n' '   :local:'
+    printf '%s\n' ''
+    printf '%s\n' '.. raw:: pdf'
+    printf '%s\n' ''
+    printf '%s\n' '   PageBreak'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../CHANGELOG.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. raw:: pdf'
+    printf '%s\n' ''
+    printf '%s\n' '   PageBreak'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/setup-and-objective.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. raw:: pdf'
+    printf '%s\n' ''
+    printf '%s\n' '   PageBreak'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/scoring-and-turns.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/control.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/snooker-challenge.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/penalties.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/duration-variants.rst'
+    printf '%s\n' ''
+    printf '%s\n' '.. include:: ../../docs/rulebook/bookkeeping.rst'
+  } > "${PLAIN_ENTRY_FILE}"
 }
 
 versioned_pdf_path() {
@@ -220,17 +265,28 @@ versioned_pdf_path() {
 
 build_variant_pdf() {
   local variant="$1"
-  local theme_style="$2"
-  local generated_style="$3"
-  local root_pdf="$4"
+  local entry_file="$2"
+  local theme_style="$3"
+  local generated_style="$4"
+  local root_pdf="$5"
+  shift 5
   local output_pdf
   output_pdf="$(versioned_pdf_path "${variant}")"
 
-  "${VENV_DIR}/bin/rst2pdf" \
-    --date-invariant \
-    --stylesheets="${theme_style},${generated_style}" \
-    "${ENTRY_FILE}" \
-    -o "${output_pdf}"
+  if [[ $# -gt 0 ]]; then
+    "${VENV_DIR}/bin/rst2pdf" \
+      --date-invariant \
+      --stylesheets="${theme_style},${generated_style}" \
+      "$@" \
+      "${entry_file}" \
+      -o "${output_pdf}"
+  else
+    "${VENV_DIR}/bin/rst2pdf" \
+      --date-invariant \
+      --stylesheets="${theme_style},${generated_style}" \
+      "${entry_file}" \
+      -o "${output_pdf}"
+  fi
   cp "${output_pdf}" "${root_pdf}"
 
   printf 'Generated %s\n' "${output_pdf}"
@@ -244,20 +300,26 @@ build_pdf() {
   sync_version_rst "${version}"
   ensure_tools
   ensure_page_assets
+  ensure_plain_entry
 
   mkdir -p "${PDF_DIR}"
 
   build_variant_pdf \
     "polished" \
+    "${ENTRY_FILE}" \
     "${POLISHED_THEME_STYLE}" \
     "${POLISHED_GENERATED_STYLE}" \
     "${ROOT_POLISHED_PDF}"
 
   build_variant_pdf \
     "plain" \
+    "${PLAIN_ENTRY_FILE}" \
     "${PLAIN_THEME_STYLE}" \
     "${PLAIN_GENERATED_STYLE}" \
-    "${ROOT_PLAIN_PDF}"
+    "${ROOT_PLAIN_PDF}" \
+    --header="###Section###" \
+    --footer="###Page###" \
+    --section-header-depth=1
 }
 
 release_rulebook() {

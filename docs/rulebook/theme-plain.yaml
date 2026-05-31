@@ -1,66 +1,66 @@
 linkColor: "#000000"
 
 pageSetup:
-  size: A4
-  margin-top: 2cm
-  margin-bottom: 1.8cm
-  margin-left: 2cm
-  margin-right: 2cm
-  spacing-footer: 5mm
-  spacing-header: 5mm
+  size: A6
+  margin-top: 1.05cm
+  margin-bottom: 0.85cm
+  margin-left: 1.25cm
+  margin-right: 1.25cm
+  spacing-footer: 3mm
+  spacing-header: 3mm
 
 styles:
   base:
-    fontName: fontSerif
-    fontSize: 10
-    leading: 12
-    textColor: "#000000"
+    fontName: fontSans
+    fontSize: 8.7
+    leading: 11.2
+    textColor: "#333333"
 
   bodytext:
     alignment: TA_LEFT
     hyphenation: false
     parent: normal
-    spaceAfter: 2
+    spaceAfter: 4
     spaceBefore: 4
 
   title:
     alignment: TA_LEFT
-    fontName: fontSerifBold
-    fontSize: 18
+    fontName: fontSans
+    fontSize: 14
     keepWithNext: false
-    leading: 22
+    leading: 17
     parent: heading
-    spaceAfter: 12
-    spaceBefore: 6
-    textColor: "#000000"
+    spaceAfter: 13
+    spaceBefore: 3
+    textColor: "#222222"
 
   heading:
-    fontName: fontSerifBold
+    fontName: fontSansBold
     keepWithNext: true
     parent: normal
     spaceAfter: 6
-    spaceBefore: 12
-    textColor: "#000000"
+    spaceBefore: 13
+    textColor: "#222222"
 
   heading1:
-    fontSize: 14
-    leading: 17
+    fontSize: 10
+    leading: 12
     parent: heading
     spaceBefore: 16
 
   heading2:
-    fontSize: 12
-    leading: 15
+    fontSize: 9.2
+    leading: 11.4
     parent: heading
 
   heading3:
-    fontSize: 10.5
-    leading: 13
+    fontSize: 8.7
+    leading: 11.2
     parent: heading
 
   field-list:
     colWidths:
-    - 2.4cm
+    - 1.7cm
     - null
     commands:
     - - VALIGN
@@ -76,25 +76,25 @@ styles:
         - -1
       - 1
     parent: bodytext
-    spaceAfter: 10
+    spaceAfter: 12
     spaceBefore: 4
 
   fieldname:
     alignment: TA_LEFT
-    fontName: fontSerifBold
+    fontName: fontSansBold
     parent: bodytext
-    textColor: "#000000"
+    textColor: "#222222"
 
   fieldvalue:
     parent: bodytext
 
   topic-title:
-    fontName: fontSerifBold
-    fontSize: 14
-    leading: 17
+    fontName: fontSans
+    fontSize: 9.6
+    leading: 12
     parent: heading
-    spaceAfter: 8
-    textColor: "#000000"
+    spaceAfter: 10
+    textColor: "#777777"
 
   contents:
     parent: normal
@@ -102,23 +102,23 @@ styles:
     spaceBefore: 4
 
   toc:
-    fontSize: 10
-    leading: 12
+    fontSize: 8.7
+    leading: 13
     parent: normal
-    textColor: "#000000"
+    textColor: "#333333"
 
   toc1:
-    fontName: fontSerifBold
+    fontName: fontSansBold
     parent: toc
-    spaceBefore: 2
+    spaceBefore: 4
 
   toc2:
-    leftIndent: 18
+    leftIndent: 14
     parent: toc
 
   bullet-list:
     colWidths:
-    - 12
+    - 10
     - null
     commands:
     - - VALIGN
@@ -134,7 +134,7 @@ styles:
         - -1
       - 0
     parent: bodytext
-    spaceBefore: 4
+    spaceBefore: 5
 
   bullet-list-item:
     parent: bodytext
@@ -154,37 +154,46 @@ styles:
       - - -1
         - -1
       - 0.25
-      - "#666666"
+      - "#999999"
     - - LINEBELOW
       - - 0
         - 0
       - - -1
         - 0
       - 0.75
-      - "#000000"
+      - "#333333"
     - - BOX
       - - 0
         - 0
       - - -1
         - -1
       - 0.5
-      - "#000000"
+      - "#333333"
     parent: normal
-    spaceAfter: 8
-    spaceBefore: 8
+    spaceAfter: 9
+    spaceBefore: 9
 
   table-body:
     parent: normal
 
   table-heading:
     alignment: TA_CENTER
-    fontName: fontSerifBold
+    fontName: fontSansBold
     parent: normal
-    textColor: "#000000"
+    textColor: "#222222"
+
+  header:
+    alignment: TA_CENTER
+    fontName: fontSans
+    fontSize: 7.7
+    leading: 9
+    parent: normal
+    textColor: "#777777"
 
   footer:
     alignment: TA_CENTER
-    fontSize: 8
+    fontName: fontSansBold
+    fontSize: 8.5
+    leading: 10
     parent: normal
-    textColor: "#000000"
-
+    textColor: "#222222"
