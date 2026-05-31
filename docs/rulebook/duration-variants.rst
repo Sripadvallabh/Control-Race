@@ -1,19 +1,18 @@
-Duration Variants
------------------
+6. Duration Variants
+--------------------
 
-Shorter Game
-~~~~~~~~~~~~
+6.1 Shorter Game
+~~~~~~~~~~~~~~~~
 
-For a shorter game:
+**6.1.1** For a shorter game:
 
-* Set the win score to 50.
-* Set the control mark threshold to 2 marks.
+* **(a)** Set the win score to 50.
+* **(b)** Set the control mark threshold to 2 marks.
 
-Longer Game
-~~~~~~~~~~~
+6.2 Longer Game
+~~~~~~~~~~~~~~~
 
-For a longer game:
+**6.2.1** For a longer game:
 
-* Set the win score to 100.
-* Keep the standard control mark threshold at 3 marks.
-
+* **(a)** Set the win score to 100.
+* **(b)** Keep the standard control mark threshold at 3 marks.

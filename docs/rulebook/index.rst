@@ -22,14 +22,38 @@ Control Race Rulebook
 
 .. include:: setup-and-objective.rst
 
+.. raw:: pdf
+
+   PageBreak
+
 .. include:: scoring-and-turns.rst
+
+.. raw:: pdf
+
+   PageBreak
 
 .. include:: control.rst
 
+.. raw:: pdf
+
+   PageBreak
+
 .. include:: snooker-challenge.rst
+
+.. raw:: pdf
+
+   PageBreak
 
 .. include:: penalties.rst
 
+.. raw:: pdf
+
+   PageBreak
+
 .. include:: duration-variants.rst
+
+.. raw:: pdf
+
+   PageBreak
 
 .. include:: bookkeeping.rst

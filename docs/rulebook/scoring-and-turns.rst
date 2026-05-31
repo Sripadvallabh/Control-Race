@@ -1,10 +1,10 @@
-Scoring and Turns
------------------
+2. Scoring and Turns
+--------------------
 
-Ball Values
-~~~~~~~~~~~
+2.1 Ball Values
+~~~~~~~~~~~~~~~
 
-Points are scored using the standard snooker color values.
+**2.1.1** Points are scored using the standard snooker color values.
 
 .. list-table::
    :header-rows: 1
@@ -27,18 +27,17 @@ Points are scored using the standard snooker color values.
    * - Black
      - 7
 
-Nomination
-~~~~~~~~~~
+2.2 Nomination
+~~~~~~~~~~~~~~
 
-Before each scoring attempt, the player nominates the ball they are attempting
-to pot.
+**2.2.1** Before each scoring attempt, the player nominates the ball they are
+attempting to pot.
 
-A color cannot be nominated if scoring it would move the player above the win
-score.
+**2.2.2** A color cannot be nominated if scoring it would move the player above
+the win score.
 
-Spotting
-~~~~~~~~
+2.3 Spotting
+~~~~~~~~~~~~
 
-Every potted ball is returned to its spot after the scoring, control, challenge,
-or penalty consequences of the shot have been resolved.
-
+**2.3.1** Every potted ball is returned to its spot after the scoring, control,
+challenge, or penalty consequences of the shot have been resolved.
