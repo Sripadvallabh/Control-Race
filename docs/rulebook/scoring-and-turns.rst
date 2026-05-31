@@ -4,7 +4,7 @@
 2.1 Ball Values
 ~~~~~~~~~~~~~~~
 
-**2.1.1** Points are scored using the standard snooker color values.
+**1.** Points are scored using the standard snooker color values.
 
 .. list-table::
    :header-rows: 1
@@ -30,14 +30,14 @@
 2.2 Nomination
 ~~~~~~~~~~~~~~
 
-**2.2.1** Before each scoring attempt, the player nominates the ball they are
+**1.** Before each scoring attempt, the player nominates the ball they are
 attempting to pot.
 
-**2.2.2** A color cannot be nominated if scoring it would move the player above
+**2.** A color cannot be nominated if scoring it would move the player above
 the win score.
 
 2.3 Spotting
 ~~~~~~~~~~~~
 
-**2.3.1** Every potted ball is returned to its spot after the scoring, control,
+**1.** Every potted ball is returned to its spot after the scoring, control,
 challenge, or penalty consequences of the shot have been resolved.
